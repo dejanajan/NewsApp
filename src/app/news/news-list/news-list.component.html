@@ -1,0 +1,20 @@
+<div *ngFor="let news of newsCategory | paginate: {itemsPerPage: 10, currentPage : p}" class="newsList">
+    <div class="newsBox">
+        <h2>{{news.name}}</h2>
+        <p>{{news.description}}</p>
+        <a href="{{news.url}}">Read full article</a>
+        <span class="badge">{{news.category | titlecase}}</span>
+        <span class="badge">{{news.country | uppercase}}</span>
+    </div>   
+</div>
+
+<nav class="pageNavigation">
+  <pagination-controls class="paginationList"
+    maxSize="5"
+    directionLinks="true"
+    autoHide="true"
+    previousLabel=""
+    nextLabel=""
+    (pageChange)="p = $event">
+  </pagination-controls>
+</nav>

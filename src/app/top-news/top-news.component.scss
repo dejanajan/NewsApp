@@ -1,0 +1,61 @@
+/** color variables */
+$colorWhite: #fff;
+$colorRed: #ff0000;
+$colorBlack: #000;
+$colorDarkRed: #8b0000;
+$colorGray: 	#808080;
+$font: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+
+.newsList {
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;;
+    .newsBox {
+        margin-bottom: 20px;
+        padding: 20px;
+        border: 0.5px solid $colorRed;
+        border-radius: 3.5px;
+        box-shadow: 0px 2px 3px 0px $colorDarkRed;
+        background: rgba(255, 255, 255, 0.8);
+
+        h2 {
+            font-size: 22px;
+            font-weight: 600;
+        }
+        a {
+            display: block;
+            margin-bottom: 10px;
+            font-size: 14px;
+            color: red;
+            &:hover {
+                text-decoration: underline;
+                color: $colorDarkRed;
+            }
+        }
+        span {
+            margin-right: 10px;
+            display: inline-block;
+            border: 1px solid $colorGray;
+            color: $colorGray;
+            font-weight: 100;
+            letter-spacing: 0.5px;
+        }
+
+        img {
+            max-width: 350px;
+            width: 100%;
+            @media(max-width: 991px){
+                margin-bottom: 20px;
+                max-width: 991px;
+                width: 100%;
+            }
+        }
+    }
+}
+
+.pageNavigation {
+    float: right;
+}
+
+.loader {
+    font-size: 20px;
+    font-weight: 500;
+}

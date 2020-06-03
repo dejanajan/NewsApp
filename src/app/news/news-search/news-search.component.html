@@ -1,0 +1,46 @@
+<form class="searchForm" [formGroup]="form" novalidate>
+    <h2 class="text-center">Quick Search</h2>
+    <div class="form-group row">
+    <div class="col-sm-12">
+        <input type="text" 
+        class="form-control" 
+        id="inputName" 
+        placeholder="Name" 
+        autocomplete="off"
+        formControlName="name"
+        />
+    </div>
+    </div>
+    <div class="form-group row">
+    <div class="col-sm-12">
+        <label class="mr-sm-2" for="selectCountry">Country</label>
+        <select class="custom-select mr-sm-2" 
+                id="selectCountry"
+                formControlName="country"
+        >
+            <option value="" selected>Choose...</option>
+            <option *ngFor = "let country of countriesList"  value="{{country.abb}}" >{{country.name}}</option>
+        </select>
+    </div>
+    </div>
+    <div class="form-group row">
+    <div class="col-sm-12">
+        <label class="mr-sm-2" for="selectLanguage">Language</label>
+        <select class="custom-select mr-sm-2 mb-2" 
+                id="selectLanguage" 
+                formControlName="language"
+        >
+            <option value="" selected>Choose...</option>
+            <option *ngFor = "let lang of languageList" value="{{ lang.abb }}">{{ lang.lang }}</option>
+        </select>
+    </div>
+    </div>
+    <div class="form-group row">
+    <div class="col-sm-12">
+        <button type="submit" 
+                class="btn btn-sm btn-block"
+                (click)="search(form.value)">Search</button>
+    </div>
+    </div>
+</form>
+

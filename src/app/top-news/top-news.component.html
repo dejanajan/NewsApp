@@ -1,0 +1,31 @@
+<div class="text-center text-danger">
+    <p class="loader" *ngIf="loading">Loading...</p>
+</div>
+
+<div *ngFor="let top of topNewsResult | paginate: {itemsPerPage: 5, currentPage : p}" class="newsList">
+    <div class="newsBox">
+        <div class="row top-news-wrapper">
+            <div class="col-md-12 col-lg-4">
+                <img src="{{top.urlToImage}}" alt="Article Image">
+            </div>
+            <div class="col-md-12 col-lg-8">
+                <h2>{{top.title}}</h2>
+                <p>{{top.description}} {{top.content}}</p>
+                <a href="{{top.url}}">Read full article</a>
+                <span class="badge">{{top.publishedAt | date }}</span>
+                <span class="badge">Author: {{top.author | titlecase }}</span>
+            </div>
+        </div>
+    </div>   
+</div>
+
+<nav class="pageNavigation">
+    <pagination-controls class="paginationList"
+      maxSize="5"
+      directionLinks="true"
+      autoHide="true"
+      previousLabel=""
+      nextLabel=""
+      (pageChange)="p = $event">
+    </pagination-controls>
+  </nav>
